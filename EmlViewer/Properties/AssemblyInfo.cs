@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // 組件的一般資訊是由下列的屬性集控制。
 // 變更這些屬性的值即可修改組件的相關
 // 資訊。
-[assembly: AssemblyTitle("EmlViewer")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("電子郵件檢視器")]
+[assembly: AssemblyDescription("提供*.eml檔案詳細屬性與內文檢視")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("XuPeiYao@NKFUST")]
 [assembly: AssemblyProduct("EmlViewer")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]

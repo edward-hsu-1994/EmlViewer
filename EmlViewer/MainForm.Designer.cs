@@ -25,11 +25,11 @@
         private void InitializeComponent() {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.說明HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.關於AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.開啟舊檔OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.結束XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.說明HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.關於AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.htmlViewer = new System.Windows.Forms.WebBrowser();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,22 +52,8 @@
             this.toolStripSeparator1,
             this.結束XToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(58, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(57, 20);
             this.toolStripMenuItem1.Text = "檔案(&F)";
-            // 
-            // 說明HToolStripMenuItem
-            // 
-            this.說明HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.關於AToolStripMenuItem});
-            this.說明HToolStripMenuItem.Name = "說明HToolStripMenuItem";
-            this.說明HToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.說明HToolStripMenuItem.Text = "說明(&H)";
-            // 
-            // 關於AToolStripMenuItem
-            // 
-            this.關於AToolStripMenuItem.Name = "關於AToolStripMenuItem";
-            this.關於AToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.關於AToolStripMenuItem.Text = "關於(&A)";
             // 
             // 開啟舊檔OToolStripMenuItem
             // 
@@ -88,25 +74,47 @@
             this.結束XToolStripMenuItem.Text = "結束(&X)";
             this.結束XToolStripMenuItem.Click += new System.EventHandler(this.結束XToolStripMenuItem_Click);
             // 
+            // 說明HToolStripMenuItem
+            // 
+            this.說明HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.關於AToolStripMenuItem});
+            this.說明HToolStripMenuItem.Name = "說明HToolStripMenuItem";
+            this.說明HToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.說明HToolStripMenuItem.Text = "說明(&H)";
+            // 
+            // 關於AToolStripMenuItem
+            // 
+            this.關於AToolStripMenuItem.Name = "關於AToolStripMenuItem";
+            this.關於AToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.關於AToolStripMenuItem.Text = "關於 電子郵件檢視器(&A)";
+            this.關於AToolStripMenuItem.Click += new System.EventHandler(this.關於AToolStripMenuItem_Click);
+            // 
             // htmlViewer
             // 
+            this.htmlViewer.AllowNavigation = false;
             this.htmlViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.htmlViewer.Location = new System.Drawing.Point(0, 24);
             this.htmlViewer.MinimumSize = new System.Drawing.Size(20, 20);
             this.htmlViewer.Name = "htmlViewer";
             this.htmlViewer.Size = new System.Drawing.Size(736, 389);
             this.htmlViewer.TabIndex = 1;
+            this.htmlViewer.Visible = false;
             // 
             // MainForm
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(736, 413);
             this.Controls.Add(this.htmlViewer);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "電子郵件檢視器";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
