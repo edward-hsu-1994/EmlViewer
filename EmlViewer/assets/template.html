@@ -6,7 +6,40 @@
     <title></title>
 </head>
 <body>
-    {{Subject}}<br />
+    <table style="width:100%;border:5px #cccccc solid;" rules="all">
+        <thead>
+            <tr>
+                <td style="width:70px">屬性</td>
+                <td>值</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>主旨</td>
+                <td>{{Subject}}</td>
+            </tr>
+            <tr>
+                <td>寄件者</td>
+                <td>{{From}}</td>
+            </tr>
+            <tr>
+                <td>收件者</td>
+                <td>{{To}}</td>
+            </tr>
+            <tr>
+                <td>副本</td>
+                <td>{{Cc}}</td>
+            </tr>
+            <tr>
+                <td>密件副本</td>
+                <td>{{Bcc}}</td>
+            </tr>
+            <tr>
+                <td>時間</td>
+                <td>{{Date}}</td>
+            </tr>
+        </tbody>
+    </table>
     {{HtmlBody}}
 </body>
 </html>
