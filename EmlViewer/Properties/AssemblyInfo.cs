@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // 變更這些屬性的值即可修改組件的相關
 // 資訊。
 [assembly: AssemblyTitle("電子郵件檢視器")]
-[assembly: AssemblyDescription("提供*.eml檔案詳細屬性與內文檢視")]
+[assembly: AssemblyDescription("提供*.eml檔案詳細屬性與內文檢視。")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("XuPeiYao@NKFUST")]
+[assembly: AssemblyCompany("XuPeiYao@GOFA")]
 [assembly: AssemblyProduct("EmlViewer")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]

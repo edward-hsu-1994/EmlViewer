@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.開啟舊檔OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,19 +59,19 @@
             // 開啟舊檔OToolStripMenuItem
             // 
             this.開啟舊檔OToolStripMenuItem.Name = "開啟舊檔OToolStripMenuItem";
-            this.開啟舊檔OToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.開啟舊檔OToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.開啟舊檔OToolStripMenuItem.Text = "開啟舊檔(&O)";
             this.開啟舊檔OToolStripMenuItem.Click += new System.EventHandler(this.開啟舊檔OToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(137, 6);
             // 
             // 結束XToolStripMenuItem
             // 
             this.結束XToolStripMenuItem.Name = "結束XToolStripMenuItem";
-            this.結束XToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.結束XToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.結束XToolStripMenuItem.Text = "結束(&X)";
             this.結束XToolStripMenuItem.Click += new System.EventHandler(this.結束XToolStripMenuItem_Click);
             // 
@@ -109,6 +110,7 @@
             this.ClientSize = new System.Drawing.Size(736, 413);
             this.Controls.Add(this.htmlViewer);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "電子郵件檢視器";
