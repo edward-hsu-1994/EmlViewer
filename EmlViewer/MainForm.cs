@@ -38,10 +38,38 @@ namespace EmlViewer {
                     .Replace("{{" + pro.Name + "}}", MimeMessageProConvert(pro.GetValue(message)) ?? "");
             }
 
+            #region 內嵌圖片
+            var images = message.BodyParts
+                .Where(x => x.ContentType.Matches("image", "*"))
+                .ToArray();
+
+            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(html);
+
+            var nodes = doc.DocumentNode.SelectNodes("//img")?.ToList();
+
+            foreach (var node in nodes) {
+                var cid = node.Attributes["src"]?.Value;
+                if (cid == null) continue;
+                if (cid.IndexOf("cid:") == -1) continue;
+                cid = cid.Replace("cid:", "");
+                var image = images.FirstOrDefault(x => x.ContentId == cid);
+
+                if (image == null) continue;
+
+                MemoryStream imageTempStream = new MemoryStream();
+                image.WriteTo(imageTempStream);
+
+                var base64 = Encoding.UTF8.GetString(imageTempStream.ToArray()).Replace("\r", "").Replace("\n", "");
+                base64 = base64.Substring(base64.IndexOf("base64") + 6);
+                node.SetAttributeValue("src", "data:" + image.ContentType.MimeType + ";base64," + base64);
+            }
+            #endregion
+
             if (htmlViewer.Document == null) {
-                htmlViewer.DocumentText = html;
+                htmlViewer.DocumentText = doc.DocumentNode.OuterHtml;
             } else {
-                htmlViewer.Document.Write(html);
+                htmlViewer.Document.Write(doc.DocumentNode.OuterHtml);
             }
 
             Text = "電子郵件檢視器 - " + filePath.Split('/').Last();
